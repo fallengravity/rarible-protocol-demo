@@ -11,7 +11,11 @@
 export default {
   name: 'PageIndex',
   mounted() {
-    console.log(this.$API.web3.version);
+    console.log(this.$API.provider);
+    // Undefined.
+    this.$API.Provider.on('accountsChanged', (accounts) => {
+      console.log(accounts);
+    });
   },
 };
 </script>

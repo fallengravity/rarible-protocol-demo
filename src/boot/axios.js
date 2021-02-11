@@ -35,12 +35,11 @@ const web3Modal = new Web3Modal({
   cacheProvider: true, // optional
   providerOptions, // required
 });
- // needs to be in async func
-const provider = await web3Modal.connect();
+const provider = web3Modal.connect();
 const web3 = new Web3(provider);
 
 API.Web3 = web3;
-API.provider = provider;
+API.Provider = provider;
 
 Vue.prototype.$axios = axios;
 Vue.prototype.$API = API;
