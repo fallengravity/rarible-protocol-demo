@@ -15,7 +15,7 @@
           Quasar App
         </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
+        <div>App Version: 0.0.1</div>
       </q-toolbar>
     </q-header>
 
@@ -23,12 +23,13 @@
       v-model="leftDrawerOpen"
       show-if-above
       bordered
-      content-class="bg-grey-1"
+      style="background: rgb(26, 26, 26)"
     >
-      <q-list>
+      <q-list style="background: rgb(26, 26, 26)">
         <q-item-label
           header
           class="text-grey-8"
+          style="background: rgb(26, 26, 26)"
         >
           Essential Links
         </q-item-label>
@@ -36,6 +37,7 @@
           v-for="link in essentialLinks"
           :key="link.title"
           v-bind="link"
+          style="background: rgb(26, 26, 26)"
         />
       </q-list>
     </q-drawer>

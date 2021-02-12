@@ -15,10 +15,20 @@ const CONTACT_EMAIL = 'ethan@rarible.com';
 const RPC_URL = 'https://mainnet.infura.io/v3/ad2ee80801ce45de9dd717e612c904cb';
 const APP_NAME = 'Rarible Protocol';
 const wallets = [
-  { walletName: 'coinbase', preferred: true },
-  { walletName: 'trust', preferred: true, rpcUrl: RPC_URL },
-  { walletName: 'metamask', preferred: true },
-  { walletName: 'authereum' },
+  {
+    walletName: 'coinbase',
+  },
+  {
+    walletName: 'trust',
+    rpcUrl: RPC_URL,
+  },
+  {
+    walletName: 'metamask',
+    preferred: true,
+  },
+  {
+    walletName: 'authereum',
+  },
   {
     walletName: 'trezor',
     appUrl: APP_URL,
@@ -28,6 +38,7 @@ const wallets = [
   {
     walletName: 'ledger',
     rpcUrl: RPC_URL,
+    preferred: true,
   },
   {
     walletName: 'lattice',
@@ -43,24 +54,55 @@ const wallets = [
     walletName: 'portis',
     apiKey: PORTIS_KEY,
     preferred: true,
-    label: 'Login with Email',
   },
   {
     walletName: 'walletConnect',
     infuraKey: INFURA_KEY,
+    preferred: true,
   },
-  { walletName: 'opera' },
-  { walletName: 'operaTouch' },
-  { walletName: 'torus' },
-  { walletName: 'status' },
-  { walletName: 'walletLink', rpcUrl: RPC_URL, appName: APP_NAME },
-  { walletName: 'imToken', rpcUrl: RPC_URL },
-  { walletName: 'meetone' },
-  { walletName: 'mykey', rpcUrl: RPC_URL },
-  { walletName: 'huobiwallet', rpcUrl: RPC_URL },
-  { walletName: 'hyperpay' },
-  { walletName: 'wallet.io', rpcUrl: RPC_URL },
-  { walletName: 'atoken' },
+  {
+    walletName: 'opera',
+  },
+  {
+    walletName: 'operaTouch',
+  },
+  {
+    walletName: 'torus',
+  },
+  {
+    walletName: 'status',
+  },
+  {
+    walletName: 'walletLink',
+    rpcUrl: RPC_URL,
+    appName: APP_NAME,
+    preferred: true,
+  },
+  {
+    walletName: 'imToken',
+    rpcUrl: RPC_URL,
+  },
+  {
+    walletName: 'meetone',
+  },
+  {
+    walletName: 'mykey',
+    rpcUrl: RPC_URL,
+  },
+  {
+    walletName: 'huobiwallet',
+    rpcUrl: RPC_URL,
+  },
+  {
+    walletName: 'hyperpay',
+  },
+  {
+    walletName: 'wallet.io',
+    rpcUrl: RPC_URL,
+  },
+  {
+    walletName: 'atoken',
+  },
 ];
 
 let web3;

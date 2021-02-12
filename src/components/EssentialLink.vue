@@ -4,6 +4,7 @@
     tag="a"
     target="_blank"
     :href="link"
+    style="background: rgb(26, 26, 26)"
   >
     <q-item-section
       v-if="icon"

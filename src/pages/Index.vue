@@ -13,8 +13,10 @@
 export default {
   name: 'PageIndex',
   mounted() {
-    this.$q.dark.set(true);
     this.init();
+  },
+  data() {
+    return {};
   },
   methods: {
     async init() {
