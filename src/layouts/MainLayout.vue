@@ -19,27 +19,34 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-      style="background: rgb(26, 26, 26)"
-    >
-      <q-list style="background: rgb(26, 26, 26)">
-        <q-item-label
-          header
-          class="text-grey-8"
-          style="background: rgb(26, 26, 26)"
-        >
-          Essential Links
-        </q-item-label>
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-          style="background: rgb(26, 26, 26)"
-        />
-      </q-list>
+    <q-drawer v-model="leftDrawerOpen" :width="200" :breakpoint="500" bordered dark style="text-decoration: none;">
+      <q-scroll-area class="fit">
+        <q-list>
+          <router-link to="/">
+            <q-item v-ripple>
+              <q-item-section avatar>
+                <q-icon name="fas fa-home" />
+              </q-item-section>
+              <q-item-section>
+                Home
+              </q-item-section>
+            </q-item>
+          </router-link>
+          <q-separator />
+          <router-link to="/Create">
+            <q-item v-ripple>
+              <q-item-section avatar>
+                <q-icon name="fas fa-money-bill-wave" />
+              </q-item-section>
+              <q-item-section>
+                Create
+              </q-item-section>
+            </q-item>
+          </router-link>
+          <q-separator />
+
+        </q-list>
+      </q-scroll-area>
     </q-drawer>
 
     <q-page-container>
@@ -49,60 +56,12 @@
 </template>
 
 <script>
-import EssentialLink from 'components/EssentialLink.vue';
-
-const linksData = [
-  {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev',
-  },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework',
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev',
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev',
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev',
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev',
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev',
-  },
-];
 
 export default {
   name: 'MainLayout',
-  components: { EssentialLink },
   data() {
     return {
-      leftDrawerOpen: false,
-      essentialLinks: linksData,
+      leftDrawerOpen: true,
     };
   },
 };
